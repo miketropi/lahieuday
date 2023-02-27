@@ -5,7 +5,7 @@ const Article = ({ post }) => {
   const { attributes } = post;
   return <article>
     <h2>{ attributes.title }</h2>
-    <p>{ attributes.content }</p>
+    <div dangerouslySetInnerHTML={{__html: attributes.content}}></div>
   </article>;
 }
 
@@ -16,6 +16,9 @@ export default function Articles() {
   useEffect(() => {
     const __gePosts = async () => {
       const { data, meta } = await getPosts();
+
+      if(!data) return;
+
       setPosts(data);
       setLoading(false);
     }

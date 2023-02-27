@@ -17,10 +17,6 @@
       "unique": false,
       "required": true
     },
-    "content": {
-      "type": "richtext",
-      "required": true
-    },
     "slug": {
       "type": "string",
       "unique": true,
@@ -49,6 +45,15 @@
       "relation": "oneToMany",
       "target": "api::tag.tag",
       "mappedBy": "post"
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }
