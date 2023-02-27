@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
 import About from './pages/About';
+import Blog from './pages/Blog';
 
 import {
   createBrowserRouter,
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     path: "about",
     element: <About />,
   },
+  {
+    path: "blog",
+    element: <Blog />,
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
